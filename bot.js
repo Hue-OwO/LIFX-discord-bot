@@ -14,7 +14,6 @@ client.on("messageCreate", (message) => {
   if (message.content.startsWith("lifxbulblist")) {
       Lifx.discover({wait:500}).then((device_list) => {
           device_list.forEach((device) => {
-              let dev = device_list[0];
          const lightemb = new MessageEmbed()
             .setColor('DARK_VIVID_PINK')
             .setTitle(String([device['deviceInfo']['label']]))
